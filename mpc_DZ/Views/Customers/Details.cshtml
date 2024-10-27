@@ -1,0 +1,26 @@
+﻿@model mpc_DZ.Models.Customer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Customer Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>First Name</h4>
+    <p>@Model.FirstName</p>
+</div>
+<div>
+    <h4>Last Name</h4>
+    <p>@Model.LastName</p>
+</div>
+<div>
+    <h4>Email</h4>
+    <p>@Model.Email</p>
+</div>
+
+<p>
+    <a href="@Url.Action("Index")" class="btn btn-primary">Back to List</a>
+</p>

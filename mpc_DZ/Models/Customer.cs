@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace mpc_DZ.Model
+namespace mpc_DZ.Models
 {
     public class Customer
     {

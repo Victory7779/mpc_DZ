@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mpc_DZ.Models.Customer>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Customer List";
+}
+
+<h1> @ViewData["Title"] </h1>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.Email</td>
+                <td>
+                    <a href="@Url.Action("Details", new { Id = customer.Id })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { Id = customer.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { Id = customer.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using mpc_DZ.Model;
+using Microsoft.EntityFrameworkCore;
+using mpc_DZ.Models;
 using mpc_DZ.Services;
 
 namespace mpc_DZ.Controllers

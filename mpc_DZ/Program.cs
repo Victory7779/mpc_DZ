@@ -1,6 +1,7 @@
 using mpc_DZ.Services;
 using Microsoft.EntityFrameworkCore;
 
+
 public class Program 
 {
     public static void Main(string[] args)
@@ -16,8 +17,16 @@ public class Program
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
-
+        builder.Services.AddControllersWithViews();
+      //  builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
         var app = builder.Build();
+        app.UseRouting();
+        app.UseStaticFiles();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Customers}/{action=Index}/{id?}"
+            );
+        //app.MapControllers()
         app.Run();
     }
 }

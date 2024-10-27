@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using mpc_DZ.Model;
+using mpc_DZ.Models;
 
 namespace mpc_DZ.Services
 {
